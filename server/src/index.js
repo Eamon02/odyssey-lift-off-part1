@@ -8,7 +8,7 @@ const typeDefs = require('./schema');
 
 // We can allow mock data to be more specific! by setting them to functions
 const mocks = {
-	// Apollo automatically returns 2 entries per field, but we can specify more with this!!!
+	// Apollo automatically returns 2 entries per field, but we can specify more with this!!! (they will return the same info, however)
 	Query: () => ({
 		tracksForHome: () => [...new Array(6)],
 	}),
