@@ -1,13 +1,14 @@
 const { gql } = require('apollo-server');
 
-const typeDefs = gql`\
-
-    "Entry points into the rest of out data"
-    type Query{
-        "Query to get tracks array for Homepage grid"
-        "non-null list of non-null tacks"
-        tracksForHome:[Tracks!]!
-    }
+const typeDefs = gql`
+	"Entry points into the rest of out data"
+	type Query {
+		"""
+		Query to get tracks array for Homepage grid
+		non-null list of non-null tacks
+		"""
+		tracksForHome: [Track!]!
+	}
 
 	"A Track is a group of Modules that teaches about a specific topic"
 	type Track {
@@ -25,16 +26,15 @@ const typeDefs = gql`\
 		modulesCount: Int
 	}
 
-    "Author of a complete track"
-    type Author {
-        "Unique ID"
-        id: ID!
-        "Author Name"
-        name: String!
-        "Link to Author Photo"
-        photo: String
-    }
-
+	"Author of a complete track"
+	type Author {
+		"Unique ID"
+		id: ID!
+		"Author Name"
+		name: String!
+		"Link to Author Photo"
+		photo: String
+	}
 `;
 
 module.exports = typeDefs;
